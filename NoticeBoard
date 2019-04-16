@@ -1,8 +1,21 @@
 目前工作
 1、安装linux系统（ubuntu，deepin，centOS都可以，推荐deepin）
+deepin 官方安装指南：https://www.deepin.org/installation/
 2、安装idea（官网下载，deepin商店也有）
-3、配置jdk 1.8+
+idea官网下载地址：https://www.jetbrains.com/idea/download/#section=linux
+下载UItimate版本,可自带JBR或自行配置JDK
+3、配置jdk 8(不要直接用JDK12)
+JDK8官方网址：https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+尽量下载tar.gz格式，rpm需要额外依赖配置
 4、安装mysql（workbench随意）
+MySQL Community Server下载地址：https://dev.mysql.com/downloads/mysql/5.7.html#downloads
+安装5.7版本，不要直接安装8.0
 5、配置git（上网查，需要先加入我的库）
+教程网址：https://www.cnblogs.com/ericli-ericli/p/7780167.html
+先自行创建一个库测试一下
 6、安装bluefish（类似DW）
-7、熟悉一下基本指令（我会发三张图，vim，git，linux常用指令快捷键）
+自查即可
+7、熟悉一下基本指令（库里有三张图，vim，git，linux常用指令快捷键）
+熟悉一下shell指令，cd，mkdir，vim，ls，find，apt-get，rm等简单了解一下
+vim中熟悉一下怎么更改保存查询
+git熟悉一下常用的命令，如git add，git commit，git status，git push
