@@ -152,17 +152,16 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `buptmail`.`Order`
+-- Table `buptmail`.`Orders`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `buptmail`.`Order` ;
+DROP TABLE IF EXISTS `buptmail`.`Orders` ;
 
-CREATE TABLE IF NOT EXISTS `buptmail`.`Order` (
+CREATE TABLE IF NOT EXISTS `buptmail`.`Orders` (
   `id` INT UNSIGNED NOT NULL,
   `weight` INT UNSIGNED NOT NULL,
   `type` VARCHAR(45) NOT NULL,
   `price` INT UNSIGNED NOT NULL,
   `mode_payment` VARCHAR(45) NOT NULL,
-  `Ordercol` VARCHAR(45) NOT NULL,
   `time` DATE NOT NULL,
   `Car_id` INT UNSIGNED NOT NULL,
   `Box_id` INT UNSIGNED NOT NULL,
