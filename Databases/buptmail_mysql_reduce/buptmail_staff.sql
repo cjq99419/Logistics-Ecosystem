@@ -32,7 +32,7 @@ CREATE TABLE `staff` (
   `salary` int(10) unsigned NOT NULL,
   `position` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +41,7 @@ CREATE TABLE `staff` (
 
 LOCK TABLES `staff` WRITE;
 /*!40000 ALTER TABLE `staff` DISABLE KEYS */;
+INSERT INTO `staff` VALUES (1,'cjq','1234','188','163','beijing',10000,'s'),(2,'wlc','1234','176','163','shanghai',10000,'s'),(3,'gzx','1234','123','163','tianjian',10000,'s'),(4,'lgh','1234','189','163','nanjing',10000,'s'),(5,'bzw','1234','137','163','taiyuan',10000,'s');
 /*!40000 ALTER TABLE `staff` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-05  8:16:39
+-- Dump completed on 2019-09-05  8:58:11
