@@ -30,15 +30,15 @@ CREATE TABLE `orders` (
   `recipient_name` varchar(45) NOT NULL,
   `recipient_tel` varchar(45) NOT NULL,
   `recipient_address` varchar(45) NOT NULL,
-  `type` varchar(45) NOT NULL,
-  `price` int(10) unsigned NOT NULL,
-  `mode_payment` varchar(45) NOT NULL,
-  `weight` int(10) unsigned NOT NULL,
+  `type` varchar(45) DEFAULT NULL,
+  `price` int(10) unsigned DEFAULT NULL,
+  `mode_payment` varchar(45) DEFAULT NULL,
+  `weight` int(10) unsigned DEFAULT NULL,
   `status` varchar(45) NOT NULL,
-  `date` date NOT NULL,
-  `location` varchar(45) NOT NULL,
+  `date` date DEFAULT NULL,
+  `location` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-05  8:58:12
+-- Dump completed on 2019-09-05  9:54:03
