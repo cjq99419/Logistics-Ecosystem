@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <br/>
+            <h:outputText value="寄件"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="寄件人姓名" for="senderName" />
+                    <h:inputText id="senderName" value="#{ordersController.selected.senderName}" title="#{bundle.CreateOrdersTitle_senderName}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_senderName}"/>
+                    <h:outputLabel value="寄件人电话" for="senderTel" />
+                    <h:inputText id="senderTel" value="#{ordersController.selected.senderTel}" title="#{bundle.CreateOrdersTitle_senderTel}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_senderTel}"/>
+                    <h:outputLabel value="寄件人地址" for="senderAddress" />
+                    <h:inputText id="senderAddress" value="#{ordersController.selected.senderAddress}" title="#{bundle.CreateOrdersTitle_senderAddress}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_senderAddress}"/>
+                    <h:outputLabel value="收件人姓名" for="recipientName" />
+                    <h:inputText id="recipientName" value="#{ordersController.selected.recipientName}" title="#{bundle.CreateOrdersTitle_recipientName}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_recipientName}"/>
+                    <h:outputLabel value="收件人电话" for="recipientTel" />
+                    <h:inputText id="recipientTel" value="#{ordersController.selected.recipientTel}" title="#{bundle.CreateOrdersTitle_recipientTel}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_recipientTel}"/>
+                    <h:outputLabel value="收件人地址" for="recipientAddress" />
+                    <h:inputText id="recipientAddress" value="#{ordersController.selected.recipientAddress}" title="#{bundle.CreateOrdersTitle_recipientAddress}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_recipientAddress}"/>
+                </h:panelGrid>
+                <br/>
+                <h:commandLink action="#{ordersController.create}" value="提交信息" /> 
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
