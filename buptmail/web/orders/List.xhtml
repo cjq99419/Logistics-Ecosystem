@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <h:outputText value="#{bundle.ListOrdersTitle}"></h:outputText>
+    <h:form styleClass="jsfcrud_list_form">
+        <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+        </h:panelGroup>
+        <h:outputText escape="false" value="#{bundle.ListOrdersEmpty}" rendered="#{ordersController.items.rowCount == 0}"/>
+        <h:panelGroup rendered="#{ordersController.items.rowCount > 0}">
+            <h:outputText value="#{ordersController.pagination.pageFirstItem + 1}..#{ordersController.pagination.pageLastItem + 1}/#{ordersController.pagination.itemsCount}"/>&nbsp;
+            <h:commandLink action="#{ordersController.previous}" value="#{bundle.Previous} #{ordersController.pagination.pageSize}" rendered="#{ordersController.pagination.hasPreviousPage}"/>&nbsp;
+            <h:commandLink action="#{ordersController.next}" value="#{bundle.Next} #{ordersController.pagination.pageSize}" rendered="#{ordersController.pagination.hasNextPage}"/>&nbsp;
+            <h:dataTable value="#{ordersController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_id}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.id}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_senderName}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.senderName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_senderTel}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.senderTel}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_senderAddress}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.senderAddress}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_recipientName}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.recipientName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_recipientTel}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.recipientTel}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_recipientAddress}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.recipientAddress}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_type}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.type}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_price}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.price}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_modePayment}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.modePayment}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_weight}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.weight}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_status}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.status}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_date}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.date}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{bundle.ListOrdersTitle_location}"/>
+                    </f:facet>
+                    <h:outputText value="#{item.location}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="&nbsp;"/>
+                    </f:facet>
+                    <h:commandLink action="#{ordersController.prepareView}" value="#{bundle.ListOrdersViewLink}"/>
+                    <h:outputText value=" "/>
+                    <h:commandLink action="#{ordersController.prepareEdit}" value="#{bundle.ListOrdersEditLink}"/>
+                    <h:outputText value=" "/>
+                    <h:commandLink action="#{ordersController.destroy}" value="#{bundle.ListOrdersDestroyLink}"/>
+                </h:column>
+            </h:dataTable>
+        </h:panelGroup>
+        <br />
+        <h:commandLink action="#{ordersController.prepareCreate}" value="#{bundle.ListOrdersCreateLink}"/>
+        <br />
+        <br />
+        <h:link outcome="/ManagerCenter" value="#{bundle.ListOrdersIndexLink}"/>
+    </h:form>
+
+
+</html>

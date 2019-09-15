@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        
+         <ui:define name="pagetitle" >职员信息修改</ui:define>
+        
+        <ui:define name="title" >
+            <h:outputText value="职员信息修改"  style="font-size:50px;font-family: '楷体','楷体_GB2312';
+                          top: 50px; left:12cm; position: fixed"></h:outputText>
+        </ui:define>
+         
+        <ui:define name="body">
+            <style type="text/css">
+            body {
+                text-align: center;
+                font-size: 18px;
+                background-image: url(resources/img/center.jpg);
+                background-repeat: repeat-x;
+                background-size: 100%, 100%;
+                COLOR: #0C2B30;
+            }
+        </style>
+        
+            <h:form style="top:3cm; left:12cm; position: fixed">
+                <h:panelGrid  columns="2">
+                    <h:outputLabel value="#{bundle.EditStaffLabel_staffName}" for="staffName" />
+                    <h:inputText id="staffName" value="#{staffController.selected.staffName}" title="#{bundle.EditStaffTitle_staffName}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_staffName}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_password}" for="password" />
+                    <h:inputText id="password" value="#{staffController.selected.password}" title="#{bundle.EditStaffTitle_password}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_password}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_tel}" for="tel" />
+                    <h:inputText id="tel" value="#{staffController.selected.tel}" title="#{bundle.EditStaffTitle_tel}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_tel}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{staffController.selected.email}" title="#{bundle.EditStaffTitle_email}" />
+                </h:panelGrid>
+                <br/>
+                <h:commandLink action="#{staffController.update2}" value="#{bundle.EditStaffSaveLink}"/>
+                <br />
+                <br/>
+               <h:link outcome="/PosterCenter" value="返回个人中心" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

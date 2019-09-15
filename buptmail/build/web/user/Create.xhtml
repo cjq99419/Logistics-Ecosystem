@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    
+            <h:outputText value="#{bundle.CreateUserTitle}"></h:outputText>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateUserLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{userController.selected.id}" title="#{bundle.CreateUserTitle_id}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateUserLabel_userName}" for="userName" />
+                    <h:inputText id="userName" value="#{userController.selected.userName}" title="#{bundle.CreateUserTitle_userName}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_userName}"/>
+                    <h:outputLabel value="#{bundle.CreateUserLabel_password}" for="password" />
+                    <h:inputText id="password" value="#{userController.selected.password}" title="#{bundle.CreateUserTitle_password}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_password}"/>
+                    <h:outputLabel value="#{bundle.CreateUserLabel_tel}" for="tel" />
+                    <h:inputText id="tel" value="#{userController.selected.tel}" title="#{bundle.CreateUserTitle_tel}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_tel}"/>
+                    <h:outputLabel value="#{bundle.CreateUserLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{userController.selected.email}" title="#{bundle.CreateUserTitle_email}" required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_email}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{userController.create}" value="#{bundle.CreateUserSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{userController.prepareList}" value="#{bundle.CreateUserShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/ManagerCenter" value="#{bundle.CreateUserIndexLink}"/>
+            </h:form>
+       
+</html>

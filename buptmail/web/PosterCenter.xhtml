@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <h:outputStylesheet library="css" name="other.css"/>
+        <div id="top">
+            <ul class="topnav">
+                <li><a href="UserRegister.xhtml">Register</a></li>
+                <li><a href="Userlogin.xhtml">Login</a></li>   
+                <li><a href="#{userController.isLogin()}#{staffController.isLogin()}">Personal</a></li>
+                <li><a href="about.xhtml">About us</a></li>
+                <li><a href="send.xhtml">Send</a></li>
+                <li><a href="Search.xhtml">Search</a></li>
+                <li><a href="index.xhtml">Home</a></li>            
+            </ul> 
+        </div>
+        <style type="text/css">
+            body {
+                text-align: center;
+                font-size: 18px;
+                background-image: url(resources/img/center.jpg);
+                background-repeat: repeat-x;
+                background-size: 100%, 100%;
+                COLOR: #0C2B30;
+            }
+        </style>
+    </h:head>
+    <h:body>
+
+        <h1 style="margin-top:1cm;">职员信息#{staffController.getStaff()}</h1>
+
+        <table  border="1" style="margin-left: 12cm" >
+            <tr>
+                <td>id</td>
+                <td>#{staffController.selected.id}</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>#{staffController.selected.staffName}</td>
+            </tr>
+            <tr>
+                <td>tel</td>
+                <td>#{staffController.selected.tel}</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>#{staffController.selected.email}</td>
+            </tr>
+            <tr>
+                <td>address_region</td>
+                <td>#{staffController.selected.addressRegion}</td>
+            </tr>
+            <tr>
+                <td>salary</td>
+                <td>#{staffController.selected.salary}</td>
+            </tr>
+            <tr>
+                <td>position</td>
+                <td>#{staffController.selected.position}</td>
+            </tr>
+        </table>
+
+        <h:form>
+            <h:commandLink action="StaffEdit.xhtml" value="#{bundle.ListStaffEditLink}"/>
+            <br />
+        </h:form>
+        <h:form>
+            <h:commandLink action="StaffOrders.xhtml" value="SearchOrders"/>
+            <br />
+        </h:form>
+        <h:form>
+            <h:commandButton action="#{staffController.resetLogin}" value="注销" />
+            <br />
+        </h:form>
+
+    </h:body>
+</html>

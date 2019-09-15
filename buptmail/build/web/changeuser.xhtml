@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>
+           Please change your details.          
+        </h1>
+        <h:form>
+        
+        <br/>
+        <h:outputText value="#{bundle.ListUserTitle_password}"/>
+        <h:inputText  id="password" value="#{userController.selected.password}"        required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_password}"/>
+        <br/>
+        <h:outputText value="#{bundle.ListUserTitle_tel}"/>
+        <h:inputText  id="tel" value="#{userController.selected.tel}"        required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_tel}"/>
+        
+       <br/>
+         <h:outputText value="#{bundle.ListUserTitle_email}"/>
+        <h:inputText  id="email" value="#{userController.selected.email}"        required="true" requiredMessage="#{bundle.CreateUserRequiredMessage_email}"/>
+        <br/>
+         <h:commandLink action="#{userController.updateuser()}" value="Save" />
+        
+      
+        
+        <br/>
+         <h:link outcome="/index" value="返回首页"/>
+        
+        </h:form>  
+    </h:body>
+</html>
+

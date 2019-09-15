@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        
+        <ui:define name="pagetitle">用户注册</ui:define>
+        <ui:define name="title">
+            <h:outputText value="用户注册" style="font-size:50px;font-family: '楷体','楷体_GB2312';
+                          top: 50px; left: 50px; position: fixed"  ></h:outputText>
+        </ui:define>
+        
+        <ui:define name="body">
+            <style>
+                body{
+                    margin: 0;
+                    background-image: url(resources/img/register.png);
+                    font-family:'楷体','楷体_GB2312';
+                }
+            </style>
+            
+            <h:form style=" position: fixed; right:190px; top:300px;">
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="用户名" for="name" />
+                    <h:inputText id="name" value="#{userController.selected.userName}" title="#{bundle.CreateUserTitle_name}" required="true" requiredMessage="用户名不可为空"/>
+                    <h:outputLabel value="手机号" for="tel" />
+                    <h:inputText id="tel" value="#{userController.selected.tel}" title="#{bundle.CreateUserTitle_tel}" required="true" requiredMessage="手机号不可为空"/>
+                    <h:outputLabel value="E-mail" for="email" />
+                    <h:inputText id="email" value="#{userController.selected.email}" title="#{bundle.CreateUserTitle_email}" />
+                    <h:outputLabel value="密码" for="password" />
+                    <h:inputSecret id="password" value="#{userController.selected.password}" title="#{bundle.CreateUserTitle_password}" required="true" requiredMessage="密码不可为空"/>
+                </h:panelGrid>
+                <br />
+                <h:commandButton style="margin-left: 100px" action="#{userController.create}" value="确定" />
+                <br />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

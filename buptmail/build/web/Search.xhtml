@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">    
+    <head>
+        <title>Search</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" rev="stylesheet" href="resources/css/index.css" type="text/css" media="all" />
+        <style>
+            body{
+                margin: 0;
+                background-image: url(resources/img/Search.png);
+                font-family: "Lato", sans-serif;
+                background-size: 100%,100%;
+            }
+        </style>
+    </head>
+    <body>  
+
+        <!-- 输入框 -->
+        <div class="search">
+            <h:form>           
+                <h:inputText id="email" value="#{ordersController.selected.id}" />
+                <h:commandButton action="#{ordersController.search}" value="OK" />
+                <br></br>
+                <br></br>
+                <font size="3">#{ordersController.find()}</font>
+            </h:form>
+        </div>
+
+        <!-- 导航栏 -->
+        <div id="top">
+             <ul class="topnav">
+                <li><a href="UserRegister.xhtml">Register</a></li>
+                <li><a href="Userlogin.xhtml">Login</a></li>   
+                <li><a href="#{userController.isLogin()}#{staffController.isLogin()}">Personal</a></li>
+                <li><a href="about.xhtml">About us</a></li>
+                <li><a href="send.xhtml">Send</a></li>
+                <li><a href="Search.xhtml">Search</a></li>
+                <li><a href="index.xhtml">Home</a></li>            
+            </ul> 
+        </div>                
+
+
+    </body>
+</html>

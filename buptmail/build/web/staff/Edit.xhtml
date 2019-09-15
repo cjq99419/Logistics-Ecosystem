@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+   
+            <h:outputText value="#{bundle.EditStaffTitle}"></h:outputText>
+              <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditStaffLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{staffController.selected.id}" title="#{bundle.EditStaffTitle_id}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_staffName}" for="staffName" />
+                    <h:inputText id="staffName" value="#{staffController.selected.staffName}" title="#{bundle.EditStaffTitle_staffName}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_staffName}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_password}" for="password" />
+                    <h:inputText id="password" value="#{staffController.selected.password}" title="#{bundle.EditStaffTitle_password}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_password}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_tel}" for="tel" />
+                    <h:inputText id="tel" value="#{staffController.selected.tel}" title="#{bundle.EditStaffTitle_tel}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_tel}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{staffController.selected.email}" title="#{bundle.EditStaffTitle_email}" />
+                    <h:outputLabel value="#{bundle.EditStaffLabel_addressRegion}" for="addressRegion" />
+                    <h:inputText id="addressRegion" value="#{staffController.selected.addressRegion}" title="#{bundle.EditStaffTitle_addressRegion}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_addressRegion}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_salary}" for="salary" />
+                    <h:inputText id="salary" value="#{staffController.selected.salary}" title="#{bundle.EditStaffTitle_salary}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_salary}"/>
+                    <h:outputLabel value="#{bundle.EditStaffLabel_position}" for="position" />
+                    <h:inputText id="position" value="#{staffController.selected.position}" title="#{bundle.EditStaffTitle_position}" required="true" requiredMessage="#{bundle.EditStaffRequiredMessage_position}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{staffController.update}" value="#{bundle.EditStaffSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditStaffViewLink}"/>
+                <br />
+                <h:commandLink action="#{staffController.prepareList}" value="#{bundle.EditStaffShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/ManagerCenter" value="#{bundle.EditStaffIndexLink}" />
+            </h:form>
+
+</html>

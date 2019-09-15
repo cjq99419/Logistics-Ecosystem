@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    
+            <h:outputText value="#{bundle.ViewOrdersTitle}"></h:outputText>
+       
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewOrdersLabel_id}"/>
+                    <h:outputText value="#{ordersController.selected.id}" title="#{bundle.ViewOrdersTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_senderName}"/>
+                    <h:outputText value="#{ordersController.selected.senderName}" title="#{bundle.ViewOrdersTitle_senderName}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_senderTel}"/>
+                    <h:outputText value="#{ordersController.selected.senderTel}" title="#{bundle.ViewOrdersTitle_senderTel}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_senderAddress}"/>
+                    <h:outputText value="#{ordersController.selected.senderAddress}" title="#{bundle.ViewOrdersTitle_senderAddress}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_recipientName}"/>
+                    <h:outputText value="#{ordersController.selected.recipientName}" title="#{bundle.ViewOrdersTitle_recipientName}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_recipientTel}"/>
+                    <h:outputText value="#{ordersController.selected.recipientTel}" title="#{bundle.ViewOrdersTitle_recipientTel}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_recipientAddress}"/>
+                    <h:outputText value="#{ordersController.selected.recipientAddress}" title="#{bundle.ViewOrdersTitle_recipientAddress}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_type}"/>
+                    <h:outputText value="#{ordersController.selected.type}" title="#{bundle.ViewOrdersTitle_type}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_price}"/>
+                    <h:outputText value="#{ordersController.selected.price}" title="#{bundle.ViewOrdersTitle_price}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_modePayment}"/>
+                    <h:outputText value="#{ordersController.selected.modePayment}" title="#{bundle.ViewOrdersTitle_modePayment}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_weight}"/>
+                    <h:outputText value="#{ordersController.selected.weight}" title="#{bundle.ViewOrdersTitle_weight}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_status}"/>
+                    <h:outputText value="#{ordersController.selected.status}" title="#{bundle.ViewOrdersTitle_status}"/>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_date}"/>
+                    <h:outputText value="#{ordersController.selected.date}" title="#{bundle.ViewOrdersTitle_date}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewOrdersLabel_location}"/>
+                    <h:outputText value="#{ordersController.selected.location}" title="#{bundle.ViewOrdersTitle_location}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{ordersController.destroyAndView}" value="#{bundle.ViewOrdersDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewOrdersEditLink}"/>
+                <br />
+                <h:commandLink action="#{ordersController.prepareCreate}" value="#{bundle.ViewOrdersCreateLink}" />
+                <br />
+                <h:commandLink action="#{ordersController.prepareList}" value="#{bundle.ViewOrdersShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/ManagerCenter" value="#{bundle.ViewOrdersIndexLink}"/>
+
+            </h:form>
+       
+
+</html>

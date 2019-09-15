@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <h:outputStylesheet library="css" name="other.css"/>
+          <style>
+            body{
+                margin: 0;
+                background-image: url(resources/img/Question.png);
+                background-size: 100%,100%;
+                font-family: "Lato", sans-serif;
+            }
+        </style>
+    </h:head>
+    <h:body>    
+        <!-- 导航栏的具体信息 -->
+        <div id="top">
+             <ul class="topnav">
+                <li><a href="UserRegister.xhtml">Register</a></li>
+                <li><a href="Userlogin.xhtml">Login</a></li>   
+                <li><a href="#{userController.isLogin()}#{staffController.isLogin()}">Personal</a></li>
+                <li><a href="about.xhtml">About us</a></li>
+                <li><a href="send.xhtml">Send</a></li>
+                <li><a href="Search.xhtml">Search</a></li>
+                <li><a href="index.xhtml">Home</a></li>            
+            </ul> 
+        </div>      
+        <!-- 设定滚动条-->
+        <div style="padding:30px 16px;height:1000px;">        
+        </div>                
+
+    </h:body>
+
+
+
+</html>
+
+
+

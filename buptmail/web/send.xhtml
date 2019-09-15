@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+
+        <ui:define name="pagetitle">寄件</ui:define>
+        
+        <ui:define name="title">
+            <h:outputText style="font-size:50px;font-family: '楷体','楷体_GB2312';
+                           top: 50px; left: 50px; position: fixed"  value="&#160;&#160;&#160;&#160;&#160;寄件"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <style>
+                body{
+                    position: fixed;
+                    top: 100px;
+                    left: 450px;
+                    
+                    
+                    margin:  auto;
+                    background: #f9f9f9;
+                    background-repeat: no-repeat;
+                    background-size: cover; /* 重点二 */
+                    overflow: auto;
+                }
+            </style>
+            <h:form style="width: 400px;margin:auto">
+                <h:panelGrid class="box_a" columns="3">
+                    <h:graphicImage  url="resources/img/send.png" width="40" height="80"></h:graphicImage>
+                    &#160;&#160;
+                    <h:panelGrid class="box_b" columns="2">
+                        <h:outputLabel class="out_label" value="姓名&#160;" for="senderName" />
+                        <h:inputText class="inputText" id="senderName" value="#{ordersController.selected.senderName}" title="#{bundle.CreateOrdersTitle_senderName}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_senderName}"/>
+                        <h:outputLabel class="out_label" value="电话&#160;" for="senderTel" />
+                        <h:inputText class="inputText" id="senderTel" value="#{ordersController.selected.senderTel}" title="#{bundle.CreateOrdersTitle_senderTel}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_senderTel}"/>
+                        <h:outputLabel class="out_label" value="地址&#160;" for="senderAddress" />
+                        <h:inputTextarea class="inputTextarea" id="senderAddress" value="#{ordersController.selected.senderAddress}" title="#{bundle.CreateOrdersTitle_senderAddress}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_senderAddress}"/>
+                    </h:panelGrid>
+                </h:panelGrid>
+                <br/><br/>
+                <h:panelGrid class="box_a" columns="3">
+                    <h:graphicImage url="resources/img/receive.png" width="40" height="80"></h:graphicImage>
+                    &#160;&#160;
+                    <h:panelGrid class="box_b" columns="2">
+                        <h:outputLabel class="out_label" value="姓名&#160;" for="recipientName" />
+                        <h:inputText class="inputText" id="recipientName" value="#{ordersController.selected.recipientName}" title="#{bundle.CreateOrdersTitle_recipientName}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_recipientName}"/>
+                        <h:outputLabel class="out_label" value="电话&#160;" for="recipientTel" />
+                        <h:inputText class="inputText" id="recipientTel" value="#{ordersController.selected.recipientTel}" title="#{bundle.CreateOrdersTitle_recipientTel}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_recipientTel}"/>
+                        <h:outputLabel class="out_label" value="地址&#160;" for="recipientAddress" />
+                        <h:inputTextarea class="inputTextarea" id="recipientAddress" value="#{ordersController.selected.recipientAddress}" title="#{bundle.CreateOrdersTitle_recipientAddress}" required="true" requiredMessage="#{bundle.CreateOrdersRequiredMessage_recipientAddress}"/>
+                    </h:panelGrid>
+                </h:panelGrid>
+                <br/>
+                <br/>
+                <h:commandButton image="resources/img/xd.png" action="#{ordersController.create2}" value="提交订单" onclick="return confirm('是否确认提交');" /> 
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

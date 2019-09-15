@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+   
+            <h:outputText value="#{bundle.EditOrdersTitle}"></h:outputText>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{ordersController.selected.id}" title="#{bundle.EditOrdersTitle_id}" required="true" requiredMessage="#{bundle.EditOrdersRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_senderName}" for="senderName" />
+                    <h:inputText id="senderName" value="#{ordersController.selected.senderName}" title="#{bundle.EditOrdersTitle_senderName}" required="true" requiredMessage="#{bundle.EditOrdersRequiredMessage_senderName}"/>
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_senderTel}" for="senderTel" />
+                    <h:inputText id="senderTel" value="#{ordersController.selected.senderTel}" title="#{bundle.EditOrdersTitle_senderTel}" required="true" requiredMessage="#{bundle.EditOrdersRequiredMessage_senderTel}"/>
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_senderAddress}" for="senderAddress" />
+                    <h:inputText id="senderAddress" value="#{ordersController.selected.senderAddress}" title="#{bundle.EditOrdersTitle_senderAddress}" required="true" requiredMessage="#{bundle.EditOrdersRequiredMessage_senderAddress}"/>
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_recipientName}" for="recipientName" />
+                    <h:inputText id="recipientName" value="#{ordersController.selected.recipientName}" title="#{bundle.EditOrdersTitle_recipientName}" required="true" requiredMessage="#{bundle.EditOrdersRequiredMessage_recipientName}"/>
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_recipientTel}" for="recipientTel" />
+                    <h:inputText id="recipientTel" value="#{ordersController.selected.recipientTel}" title="#{bundle.EditOrdersTitle_recipientTel}" required="true" requiredMessage="#{bundle.EditOrdersRequiredMessage_recipientTel}"/>
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_recipientAddress}" for="recipientAddress" />
+                    <h:inputText id="recipientAddress" value="#{ordersController.selected.recipientAddress}" title="#{bundle.EditOrdersTitle_recipientAddress}" required="true" requiredMessage="#{bundle.EditOrdersRequiredMessage_recipientAddress}"/>
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_type}" for="type" />
+                    <h:inputText id="type" value="#{ordersController.selected.type}" title="#{bundle.EditOrdersTitle_type}" />
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_price}" for="price" />
+                    <h:inputText id="price" value="#{ordersController.selected.price}" title="#{bundle.EditOrdersTitle_price}" />
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_modePayment}" for="modePayment" />
+                    <h:inputText id="modePayment" value="#{ordersController.selected.modePayment}" title="#{bundle.EditOrdersTitle_modePayment}" />
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_weight}" for="weight" />
+                    <h:inputText id="weight" value="#{ordersController.selected.weight}" title="#{bundle.EditOrdersTitle_weight}" />
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_status}" for="status" />
+                    <h:inputText id="status" value="#{ordersController.selected.status}" title="#{bundle.EditOrdersTitle_status}" required="true" requiredMessage="#{bundle.EditOrdersRequiredMessage_status}"/>
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_date}" for="date" />
+                    <h:inputText id="date" value="#{ordersController.selected.date}" title="#{bundle.EditOrdersTitle_date}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditOrdersLabel_location}" for="location" />
+                    <h:inputText id="location" value="#{ordersController.selected.location}" title="#{bundle.EditOrdersTitle_location}" />
+                </h:panelGrid>
+                <h:commandLink action="#{ordersController.update}" value="#{bundle.EditOrdersSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditOrdersViewLink}"/>
+                <br />
+                <h:commandLink action="#{ordersController.prepareList}" value="#{bundle.EditOrdersShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/ManagerCenter" value="#{bundle.EditOrdersIndexLink}" />
+            </h:form>
+
+</html>

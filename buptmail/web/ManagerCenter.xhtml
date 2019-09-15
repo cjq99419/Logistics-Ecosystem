@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>About us</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" rev="stylesheet" href="resources/css/about.css" type="text/css" media="all" />
+    </head>
+    <h:body style="background-image: url(resources/img/manager_center.jpg); background-size:100%,100%;">    
+        <div id="top">
+            <ul class="topnav">
+                  <li><a href="UserRegister.xhtml">Register</a></li>
+                <li><a href="Userlogin.xhtml">Login</a></li>   
+                <li><a href="#{userController.isLogin()}#{staffController.isLogin()}">Personal</a></li>
+                <li><a href="about.xhtml">About us</a></li>
+                <li><a href="send.xhtml">Send</a></li>
+                <li><a href="Search.xhtml">Search</a></li>
+                <li><a href="index.xhtml">Home</a></li>    
+            </ul>   
+        </div>
+        <br/> <br/> <br/><br/><br/>
+        <h:form style="margin: 0 auto;width: 1000px">
+            <h:panelGrid columns="2">
+
+                <h:outputLabel style="font-size:80px;font-family: '楷体';background-color: #eee;opacity:0.6;">管理员端</h:outputLabel>
+
+                <h:panelGrid columns="1">
+                    <h:commandButton style="margin-left: 300px" image="resources/img/orders_view.png" action="/orders/List"/>      
+                    <br/>
+                    <h:commandButton style="margin-left: 300px" image="resources/img/staff_view.png" action="/staff/List"/>  
+                    <br/>
+                    <h:commandButton style="margin-left: 300px" image="resources/img/user_view.png" action="/user/List"/>      
+                </h:panelGrid>
+                
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+
+
+
+</html>

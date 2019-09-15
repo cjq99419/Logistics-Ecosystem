@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    
+            <h:outputText value="#{bundle.ViewStaffTitle}"></h:outputText>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewStaffLabel_id}"/>
+                    <h:outputText value="#{staffController.selected.id}" title="#{bundle.ViewStaffTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_staffName}"/>
+                    <h:outputText value="#{staffController.selected.staffName}" title="#{bundle.ViewStaffTitle_staffName}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_password}"/>
+                    <h:outputText value="#{staffController.selected.password}" title="#{bundle.ViewStaffTitle_password}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_tel}"/>
+                    <h:outputText value="#{staffController.selected.tel}" title="#{bundle.ViewStaffTitle_tel}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_email}"/>
+                    <h:outputText value="#{staffController.selected.email}" title="#{bundle.ViewStaffTitle_email}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_addressRegion}"/>
+                    <h:outputText value="#{staffController.selected.addressRegion}" title="#{bundle.ViewStaffTitle_addressRegion}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_salary}"/>
+                    <h:outputText value="#{staffController.selected.salary}" title="#{bundle.ViewStaffTitle_salary}"/>
+                    <h:outputText value="#{bundle.ViewStaffLabel_position}"/>
+                    <h:outputText value="#{staffController.selected.position}" title="#{bundle.ViewStaffTitle_position}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{staffController.destroyAndView}" value="#{bundle.ViewStaffDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewStaffEditLink}"/>
+                <br />
+                <h:commandLink action="#{staffController.prepareCreate}" value="#{bundle.ViewStaffCreateLink}" />
+                <br />
+                <h:commandLink action="#{staffController.prepareList}" value="#{bundle.ViewStaffShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/ManagerCenter" value="#{bundle.ViewStaffIndexLink}"/>
+
+            </h:form>
+
+</html>

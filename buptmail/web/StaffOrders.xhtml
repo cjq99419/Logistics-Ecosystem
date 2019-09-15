@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <h:outputStylesheet library="css" name="other.css"/>
+        <div id="top">
+            <ul class="topnav">
+                <li><a href="UserRegister.xhtml">Register</a></li>
+                <li><a href="Userlogin.xhtml">Login</a></li>   
+                <li><a href="#{userController.isLogin()}#{staffController.isLogin()}">Personal</a></li>
+                <li><a href="about.xhtml">About us</a></li>
+                <li><a href="send.xhtml">Send</a></li>
+                <li><a href="Search.xhtml">Search</a></li>
+                <li><a href="index.xhtml">Home</a></li>            
+            </ul> 
+        </div>
+        <style type="text/css">
+            body {
+                text-align: center;
+                font-size: 14px;
+                background-image: url(resources/img/center.jpg);
+                background-repeat: repeat-x;
+                background-size: 100%, 100%;
+                COLOR: #0C2B30;
+            }
+        </style>
+    </h:head>
+
+           
+          
+            <h:form style="margin-top:1cm;">
+                <h:outputText  value="相关订单" style="font-size:50px;font-family: '楷体','楷体_GB2312';"></h:outputText>    
+                <br></br>
+                 <h:dataTable value="#{staffController.staffOrders}" var="item" border="1" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_senderName}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.senderName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_senderTel}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.senderTel}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_senderAddress}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.senderAddress}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_recipientName}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.recipientName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_recipientTel}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.recipientTel}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_recipientAddress}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.recipientAddress}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_type}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.type}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_modePayment}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.modePayment}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_status}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.status}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_date}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.date}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_location}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.location}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_price}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.price}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListOrdersTitle_weight}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.weight}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{ordersController.prepareEdit}" value="编辑订单"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{ordersController.destroy}" value="删除订单"/>
+                        </h:column>
+                    </h:dataTable>
+                <br></br>
+                <h:link outcome="/PosterCenter" value="返回个人中心" />
+            </h:form>
+
+</html>

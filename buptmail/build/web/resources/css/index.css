@@ -1,0 +1,89 @@
+  /*导航栏的基本框架*/
+        body{
+                margin: 0;
+                background-image: url(../resources/img/back.png);
+                background-size: 100%,100%;
+                font-family: "Lato", sans-serif;
+            }
+            #top ul.topnav {
+                list-style-type: none;
+                margin:0;
+                top:0;
+                left:5px;
+                right:5px;
+                padding: 0 ;
+                width:100%;
+                background-color: #0f0f0f;
+                position:fixed;
+                overflow: hidden;
+            }
+            /* 右侧开始 */
+           #top ul.topnav li {float: right;
+               }
+            /* 设置导航条实例的底色和大小 黑色 */
+           #top ul.topnav li a {
+                display: block;
+                color: #fefefe;
+                text-align: center;
+                padding: 8px 20px;
+                text-decoration: none;
+            }
+            /*鼠标移动，蓝色字*/
+          #top  ul.topnav li a:hover:not(.active)  {
+                background-color:#28a9ad;
+            }
+            /* 右侧对齐 */     
+            @media screen and (max-width: 400px){
+                 ul.topnav li {float: none;}
+            }
+            
+            
+            
+            /*左侧栏*/
+            .sidenav {
+             width: 70px;
+             position: fixed;
+             z-index: 1;
+             top: 160px;
+             left: 10px;
+             background:#0f1523;
+             padding: 8px 0;
+            }
+            .sidenav a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 20px;
+                color: white ;
+                display: block;
+            }
+            .sidenav a:hover {
+                background-color:#0C8EAF;
+            }
+            @media screen and (max-height: 450px) {
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
+            }          
+            /*下拉框*/
+            .dropdown {
+                position: relative;                
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                color:white;               
+                width: 100px;              
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }           
+             /*搜索框*/
+            .search {
+             width: 300px;
+             height:550px;
+             position: fixed;
+             z-index: 1;
+             top: 430px;
+             left: 450px;           
+             overflow-x: hidden;
+             padding: 10px 0;
+            }
